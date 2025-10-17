@@ -36,3 +36,14 @@ select category, count(*)  from products
 group by category
 having count(*) > 1;
 
+--Printing the price of products in asc order.
+select price from products order by price;
+
+--Printing only the top 3 products.
+select * from products limit 3;
+
+--Changed the name of the name and price column.
+select name as item_name, price as item_price from products;
+
+--printing the unique values for category.
+select distinct category from products;
