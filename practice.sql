@@ -1,3 +1,4 @@
+--Creating the table.
 create table products(
 product_id serial primary key,
 name varchar(100) not null,
@@ -10,6 +11,7 @@ added_on date default current_date,
 last_update timestamp default now()
 );
 
+--Inserting the values.
 insert into products(name, sku_code, price, stock_quantity, is_available, category)
 values
 ('Wireless Mouse', 'WM123456', 699.99, 50, TRUE, 'Electronics'),
@@ -23,10 +25,13 @@ values
 ('Yoga Mat', 'YM901234', 499.00, 25, TRUE, 'Fitness'),
 ('Water Bottle', 'WB012345', 349.00, 60, TRUE, 'Fitness');
 
+--Printing the tables.
 select * from products where category = 'Electronics'
 
+--Printing name, price.
 select name, price from products
 
+--Printing the count of category > 1
 select category, count(*)  from products
 group by category
 having count(*) > 1;
