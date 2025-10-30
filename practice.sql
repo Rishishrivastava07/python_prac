@@ -69,3 +69,19 @@ select sum(price) from products where category = 'Electronics' or category = 'Fi
 
 --finding average then rounding it till 2 decimal places.
 select round(avg(price), 2) from products;
+
+--displaying the name and price of the cheapest product.
+select name, price from products where price = (select min(price)from products);
+
+--finding the avg price of products
+select round(avg(price), 2) from products where category in ('Home & Kitchen', 'Fitness');
+
+--finding the average of products that belong to the desired categories.
+select name, stock_quantity from products where is_available = TRUE and stock_quantity > 50 and price <> 299;
+
+--finding the max price of the desired category.
+select category, max(price) as max_price from products group by category;
+
+--printing all unique categories in uppercase sorted in descending order
+select distinct upper(category) as category_upper from products order by category_upper desc;
+
