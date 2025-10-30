@@ -47,3 +47,7 @@ select name as item_name, price as item_price from products;
 
 --printing the unique values for category.
 select distinct category from products;
+
+
+select * from products
+where category = 'Accessories' and price <= 1000;
