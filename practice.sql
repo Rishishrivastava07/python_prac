@@ -85,3 +85,23 @@ select category, max(price) as max_price from products group by category;
 --printing all unique categories in uppercase sorted in descending order
 select distinct upper(category) as category_upper from products order by category_upper desc;
 
+--prints the length.
+select name, length(name) from products;
+
+--selecting the substring through indxing.
+select substring('Dragon warrior',1,6);
+
+--printing the name and the first two letters of sku_code using substring.
+select name , substring(sku_code,1,2) from products;
+
+--printing elements from right/left by using left/right function.
+select right('brother',3);
+
+--cocatinating the name and the category.
+select concat(name, ' ', category) as product_with_category from products;
+--using with seperator.
+select concat_ws(' ', name, category, price) as concat_table from products;
+
+--replacing the first two letters of sku_code using replace.
+select name, replace(sku_code, left(sku_code, 2), 'GG') from products;
+
