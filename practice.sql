@@ -29,7 +29,7 @@ values
 select * from products where category = 'Electronics'
 
 --Printing name, price.
-select name, price from products
+select name, price from products;
 
 --Printing the count of category > 1
 select category, count(*)  from products
@@ -48,6 +48,24 @@ select name as item_name, price as item_price from products;
 --printing the unique values for category.
 select distinct category from products;
 
-
+--printing all accessories priced less than 1000.
 select * from products
 where category = 'Accessories' and price <= 1000;
+
+--printing all the products who have sku_code staring with the letter W.
+select * from products where sku_code like 'W%';
+
+--printing all the products who have sku_code containing the letters/numbers.
+select * from products where sku_code like '%123%';
+
+--printing all the products who have the sku_code containing the second letter B.
+select * from products where sku_code like '_B%';
+
+--Sum of all products.
+select sum(price) from products;
+
+--Sum of category of electronics and fitness.
+select sum(price) from products where category = 'Electronics' or category = 'Fitness';
+
+--finding average then rounding it till 2 decimal places.
+select round(avg(price), 2) from products;
